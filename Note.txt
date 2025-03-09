@@ -26,3 +26,18 @@ while True:
         처리할 구문
     except EOFError:
         break
+
+- index -> array.index(X): array 안에서 X의 위치를 알려준다
+	a = [1,2,3]
+	a.index(1) = 0
+	a.index(3) = 2
+
+- array안에서 replace -> array.replace(a, b) array 안의 a 를 b 로 교체
+
+-import sys
+n = int(sys.stdin.readline())
+
+- 2차원 배열 제대로 선언하기
+N rows
+M columns
+[[0 for j in range(M)] for i in range(N)]

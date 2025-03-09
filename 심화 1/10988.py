@@ -17,4 +17,13 @@ level, noon은 팰린드롬이고, baekjoon, online, judge는 팰린드롬이 �
 
 word = list(input())
 
-print(word)
+for i in range(len(word)):
+    if word[i] == word[len(word)-i-1]:
+        check = 1
+    else: 
+        check = 0
+
+    if check == 0:
+        break
+
+print(check)
