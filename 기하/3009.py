@@ -9,18 +9,43 @@
 
 출력
 직사각형의 네 번째 점의 좌표를 출력한다.
+
+*P3(x1, y1+b)           *P4(x1+a, y1+b)
+
+*P1(x1, y1)             *P2(x1+a, y1)
+
 """
 x1, y1 = map(int, input().split())
 x2, y2 = map(int, input().split())
 x3, y3 = map(int, input().split())
 
-#p1 = [x1, y1]
-#p2 = [x2, y2]
-#p3 = [x3, y3]
+while True:
+    # 첫 입력 받을 것을 기준 (p1)
+    if x1 == x2:
+        if y1 == y3:
+            print(x3, y2)
+            break
+        else:
+            print(x3, y1)
+            break
+    # 30 20
+    # 10 10
+    # 10 20
+    elif x2 == x3: # print(x1, )
+        if y1 == y2: 
+            print(x1, y3)
+            break
+        else: #y1 == y3
+            print(x1, y2)
+            break
 
-x = [x1, x2, x3]
-y = [y1, y2, y3]
-
-if x1 == x2:
-    if y1 < y2:
-        
+    # 30 20
+    # 10 20
+    # 30 10
+    else: # x1 == x3 (print(x2, ))
+        if y1 == y2:
+            print(x2, y3)
+            break
+        else:
+            print(x2, y1)
+            break
