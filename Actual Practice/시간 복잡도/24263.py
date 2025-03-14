@@ -1,5 +1,5 @@
 """
-알고리즘 수업 - 알고리즘의 수행시간 1
+알고리즘 수업 - 알고리즘의 수행 시간 2
 
 문제
 오늘도 서준이는 알고리즘의 수행시간 수업 조교를 하고 있다. 아빠가 수업한 내용을 학생들이 잘 이해했는지 문제를 통해서 확인해보자.
@@ -9,8 +9,10 @@
 MenOfPassion 알고리즘은 다음과 같다.
 
 MenOfPassion(A[], n) {
-    i = ⌊n / 2⌋;
-    return A[i]; # 코드1
+    sum <- 0;
+    for i <- 1 to n
+        sum <- sum + A[i]; # 코드1
+    return sum;
 }
 입력
 첫째 줄에 입력의 크기 n(1 ≤ n ≤ 500,000)이 주어진다.
@@ -23,7 +25,12 @@ MenOfPassion(A[], n) {
 """
 
 n = int(input())
-count = 1
-degree = 0
+sum = 0
+count = 0
+for i in range(n):
+    sum += i
+    count += 1
+
+degree = 1
 print(count)
 print(degree)
