@@ -11,12 +11,24 @@ N개의 수가 주어졌을 때, 이를 오름차순으로 정렬하는 프로�
 첫째 줄부터 N개의 줄에 오름차순으로 정렬한 결과를 한 줄에 하나씩 출력한다.
 
 """
-N, k = map(int, input().split())
-num_list = list(map(int, input().split()))
 
-for i in range(N):
-    for j in range(i+1, N):
-        if num_list[i] < num_list[j]:
-            num_list[i], num_list[j] = num_list[j], num_list[i]
+# Heap Sort 이용
+import sys
+import heapq
+"""
+N = int(input())
+heap = []
 
-print(num_list[k-1])
+for _ in range(N):
+    num = int(input())
+    heapq.heappush(heap,num)
+
+while heap:
+    print(heapq.heappop(heap))
+"""
+# 윗 코드가 시간 초과가 떠서 시간 더 단축함
+
+N = int(sys.stdin.readline().strip())
+nums = [int(sys.stdin.readline().strip()) for _ in range(N)]
+nums.sort()
+sys.stdout.write("\n".join(map(str, nums)) + "\n")

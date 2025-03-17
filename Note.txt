@@ -41,3 +41,25 @@ n = int(sys.stdin.readline())
 N rows
 M columns
 [[0 for j in range(M)] for i in range(N)]
+
+- for 문 _ 이용
+for _ in range(N):
+코드에서 _는 반복 변수(i 같은 것)를 사용하지 않겠다는 의미야.
+for 문이 단순히 N번 반복하는 역할만 하면 되고,
+반복 횟수를 세는 변수가 필요 없을 때 _를 사용해.
+
+<Heap 정렬>
+heapq.heappush(heap, num) → Min Heap에 숫자를 삽입 (자동 정렬됨).
+heapq.heappop(heap) → 가장 작은 값을 꺼내어 출력.
+
+sys.stdin.readline() → 입력 속도를 빠르게 하기 위해 사용. 
+
+- write vs. sys.stdout.write
+sys.stdout.write 는 
+1. 문자열 변환이 필요 없음 → 입력된 데이터는 그대로 출력됨 (자동 변환 X)
+2. 개행 문자 자동 추가 X → \n을 직접 넣어야 함.
+3. 버퍼링이 효율적 → 여러 개의 출력을 한꺼번에 처리할 수 있음.
+
+백준
+- 1436 -> 동적계획법으로 다시 해보기
+

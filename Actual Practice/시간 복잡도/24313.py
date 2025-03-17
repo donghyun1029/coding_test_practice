@@ -20,12 +20,16 @@ O(g(n)) = {f(n) | 모든 n ≥ n0에 대하여 f(n) ≤ c × g(n)인 양의 상�
 다음 줄에 양의 정수 n0가 주어진다. (1 ≤ n0 ≤ 100)
 
 """
-f1, f2 = map(int, input().split())
-c = int(input)
-n = int(input)
+f1, f2 = input().split()
+c = int(input())
+n = int(input())
 
-for i in range(10):
-    if (f1*(i + n) + f2) <= c*(i+n):
-        print(1)
+for i in range(n, 101):
+    #print("i", i)
+    if (int(f1)*(i) + int(f2)) <= c*(i):
+        if i == 100:
+            print(1)
+            break
     else:
         print(0)
+        break

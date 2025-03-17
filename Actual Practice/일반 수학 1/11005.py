@@ -1,5 +1,7 @@
 """
-진번 변환 10->N진법
+진법 변환1
+
+10 -> N 진법
 
 문제
 10진법 수 N이 주어진다. 이 수를 B진법으로 바꿔 출력하는 프로그램을 작성하시오.
@@ -14,18 +16,13 @@ A: 10, B: 11, ..., F: 15, ..., Y: 34, Z: 35
 출력
 첫째 줄에 10진법 수 N을 B진법으로 출력한다.
 """
-N, B =  map(int, input().split())
-num = []
-q = 0
-r = 0
 
-while True:
-    q = N // B
-    r = N % B
-    if r >= 10:
-        num.append(chr(r + 55))
-    else:
-        num.append(r)
-    
+N, B = map(int, input().split())
+number = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+s = ''
 
-print(bin(11)[2:])
+while N:
+    s += number[N % B]
+    N //= B
+
+print(s[::-1])

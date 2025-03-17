@@ -18,29 +18,23 @@ M이상 N이하의 자연수 중 소수인 것을 모두 찾아 첫째 줄에 �
 
 """
 
-min = int(input())
-max = int(input())
+import sys
 
-prime_num = []
-for i in range(max-min+1):
-    a = min + i
-    prime_num.append(a)
-    temp_prime = []
-    
-    for j in range(a):
-        if a % (j+1) == 0:
-            temp_prime.append(j+1)
-            if len(temp_prime) > 2:
-                prime_num.pop()
-                break
-    #print(temp_prime)
+M = int(sys.stdin.readline().strip())
+N = int(sys.stdin.readline().strip())
 
-#print(prime_num)
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
 
-if len(prime_num) == 0:
+prime_nums = [num for num in range(M, N+1) if is_prime(num)]
+
+if not prime_nums:
     print(-1)
 else:
-    if prime_num[0] == 1:
-        del prime_num[0]
-    print(sum(prime_num))
-    print(prime_num[0])
+    print(sum(prime_nums))
+    print(prime_nums[0])
