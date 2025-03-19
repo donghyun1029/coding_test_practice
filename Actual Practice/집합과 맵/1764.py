@@ -12,4 +12,20 @@
 출력
 듣보잡의 수와 그 명단을 사전순으로 출력한다.
 """
+import sys
+N, M = map(int, sys.stdin.readline().rstrip().split())
+n_list = {}
 
+for _ in range(N):
+    name = sys.stdin.readline().rstrip()
+    n_list[name] = n_list.get(name, 1)
+
+m_list = []
+for _ in range(M):
+    name = sys.stdin.readline().rstrip()
+    if name in n_list.keys():
+        m_list.append(name)
+
+print(len(m_list))
+for i in sorted(m_list):
+    print(i)
