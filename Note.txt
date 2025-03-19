@@ -60,6 +60,25 @@ sys.stdout.write 는
 2. 개행 문자 자동 추가 X → \n을 직접 넣어야 함.
 3. 버퍼링이 효율적 → 여러 개의 출력을 한꺼번에 처리할 수 있음.
 
+<DICTIONARY>
+dictionary.setdefault(key, default_value)
+	- key가 존재하면 해당 키의 값을 반환.
+	- key가 없으면 default_value를 dictionary[key]에 할당한 후 반환.
+word_len.setdefault(len(word), []).append(word)
+	- word_len 딕셔너리에서 len(word)(단어 길이)를 키(key) 로 확인.
+	- 만약 해당 키가 존재하지 않으면 word_len[len(word)] = [] 를 실행하여 빈 리스트를 생성.
+	- 키가 존재하면 기존 리스트를 반환.
+key, value 값 바꾸기
+	- reverse_dic = {v: k for k,  v in DICTIONARY.items()}
+
+<순서 매기기>
+	num_list
+	sorted_num = sorted(num_list)
+	coord = [sorted_num.index(num) for num in num_list]
+
+<STACK>
+stack[-1] -> 스택의 맨 위(top) 값을 가져오는 표현
+
 백준
 - 1436 -> 동적계획법으로 다시 해보기
 

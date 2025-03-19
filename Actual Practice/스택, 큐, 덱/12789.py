@@ -28,17 +28,22 @@
 import sys
 
 N = int(sys.stdin.readline().rstrip())
-stack = []
-
 order = list(map(int, sys.stdin.readline().rstrip().split()))
 
-print(order)
+stack = []
+num = 1
 
-while True:
-    for i in range(len(order)):
-        if order[i] == i + 1:
-            order.remove(order[i])
-        else:
-            stack.append(order[i])
-        print(order, stack)
-    break
+for student in order:
+    if student == num:
+        num += 1
+    else:
+        stack.append(student)
+    
+    while stack and stack[-1] == num:
+        stack.pop()
+        num += 1
+
+if not stack:
+    print("Nice")
+else:
+    print("Sad")
