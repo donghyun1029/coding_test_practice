@@ -21,9 +21,12 @@ back: 큐의 가장 뒤에 있는 정수를 출력한다. 만약 큐에 들어�
 """
 
 import sys
+from collections import deque
 
 N = int(sys.stdin.readline().rstrip())
-queue = []
+queue = deque()
+result = []
+
 for _ in range(N):
     command = sys.stdin.readline().rstrip()
 
@@ -31,20 +34,18 @@ for _ in range(N):
         _, X = command.split()
         queue.append(int(X))
     elif command == "pop":
-        if queue:
-            print(queue[0])
-            queue.remove(queue[0])
-        else:
-            print("-1")
+        result.append(str(queue.popleft()) if queue else "-1")
 
     elif command == "size":
-        print(len(queue))
+        result.append(str(len(queue)))
 
     elif command == "empty":
-        print("0" if queue else "1")
+        result.append("0" if queue else "1")
     
     elif command == "front":
-        print(queue[0] if queue else "-1")
+        result.append(str(queue[0]) if queue else "-1")
     
     elif command == "back":
-        print(queue[-1] if queue else "-1")
+        result.append(str(queue[-1]) if queue else "-1")
+
+sys.stdout.write("\n".join(result)+ "\n")
